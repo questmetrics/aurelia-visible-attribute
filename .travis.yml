@@ -1,32 +1,31 @@
 language: node_js
-
 sudo: true
-
 addons:
   chrome: beta
-
 node_js:
-  - '8'
-  - '10'
-
+- '8'
+- '10'
 branches:
   only:
   - master
-
 cache: yarn
-
 before_install:
-  - # start your web application and listen on `localhost`
-  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9333 http://localhost &
-
+- 
+- google-chrome-stable --headless --disable-gpu --remote-debugging-port=9333 http://localhost
+  &
 matrix:
   fast_finish: true
-
 install:
-  - npm install
-
+- npm install
 notifications:
   email: true
-
 script:
-  - npm run test
+- npm run test
+deploy:
+  provider: npm
+  email: bigopon.777@gmail.com
+  api_key:
+    secure: fW+LQ3l1DctmF3SHYiUTd9gHht2WOjZvnkqWByUEQPGhllu5+NzQZWPKvSqjLNmaa9EshLP3C2wWscVB2IGGwu8nXNtcrRZkzzY62iDdwaNDssX5CH4Qs6ydCPieCsowLdZPMXWfuvae3IBFbIuWwxd9/lJ9BWhvfc1o7VccRg3XM32DIA8qu3+3LAtApSn1a2wpNY1iRgNu73Rr8CGIyAIVUr0Lt6VSvF+P5AzyLtgk2v+uxJUGkDERb6RQDqmRqeS9mXOvVs8Va1wp0wnOZ19ahAuks3Dle4iyGUeDY9dVe/3jrGPc748CFaYCbVxuF7AH+VzOLTU0H55XOxTgmuzxJjjSF0ETOEXnJprJedv55gdTSK0kiUC8eDIpi7HZJQ7Wign9nkc00eJv+uMsWZPHyXzPeG0u+Q8L/+8483IYp7GJQO8v5DD0nX2xsjCe3n+6TgEbfvopABLE/3zJt+3kjwQMMvXUakNsvMYsF40LRElxF1GxjUE+sibNjNkhpzhI77lrSalbftPvSddN0/FF/YJTCRIAV633gCJLDuof7ldmThlthc3037P6NEKh9pFMW67VNOosPuTzJ04lJACCXvrfAlfIaEb2wJnRXd6Mb9wsH3vxZK7JOPbshhgmNKsca7qWr9O7nLc9qedFFDG0SwRyClOtKJqco6y8jE0=
+  on:
+    tags: true
+    repo: questmetrics/aurelia-visible-attribute

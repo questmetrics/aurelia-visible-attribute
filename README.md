@@ -58,7 +58,7 @@ A custom attribute for managing common element visibility observation and notifi
   </template>
   ```
 
-  By default, the binding direction is `from-view`, which means only the custom attribute will notify the view model it resides in. (And the other direction doesn't make sense).
+  By default, the binding direction is `from-view`, which zmeans only the custom attribute will notify the view model it resides in. (And the other direction doesn't make sense).
 
 ## Problem & solution
 
