@@ -1,0 +1,16 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/working_directory
+    docker:
+      - image: node:8
+        environment:
+          NO_WATCH_TESTS: 1
+    steps:
+      - checkout
+      - run: node --version
+      - run: npm --version
+      - run: yarn --version
+
+      - run: npm install
+      - run: npm run test
