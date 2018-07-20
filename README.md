@@ -62,3 +62,4 @@ A custom attribute for managing common element visibility observation and notifi
 
 ## Problem & solution
 
+  Observing visibility was traditionally done in quite a verbose way for JavaScript applications. We often had to listen to scroll events, mutation "events" and many other events that could make an element going inside / outside of view port. With `IntersectionObserver`, those problems are solved in a nice way, but doing it manually still requires a little bit of wiring together the observer with view model. This attribute is a simple way to avoid all that, by focusing on the main usage of the `IntersectionObserver`: detect when an element is becoming visible via simple binding command.
